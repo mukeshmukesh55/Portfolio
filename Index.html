@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin: auto;
+            border-radius: 10px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            color: #0056b3;
+        }
+
+        .sub-heading {
+            font-size: 18px;
+            font-weight: bold;
+            color: #555;
+            margin-top: 15px;
+            border-bottom: 2px solid #0056b3;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .portfolio-info {
+            text-align: left;
+            padding: 10px;
+        }
+
+        p {
+            margin: 8px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background: white;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #007BFF;
+            color: white;
+        }
+
+        .button {
+            margin-top: 15px;
+            padding: 12px 18px;
+            border: none;
+            background: #007BFF;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .button:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .hidden {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .visible {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>My Portfolio</h1>
+
+        <div class="portfolio-info">
+            <p class="sub-heading">Personal Information</p>
+            <p><strong>Name:</strong> Mukesh</p>
+            <p><strong>Date of Birth:</strong> 13/11/2006</p>
+            <p><strong>Father’s Name & Occupation:</strong> B. Ravi (Farmer)</p>
+            <p><strong>Mother’s Name & Occupation:</strong> R. Latha (Home Maker)</p>
+            <p><strong>Community:</strong> BC</p>
+            <p><strong>Aadhaar Number:</strong> 679127199136</p>
+            <p><strong>Mobile Number:</strong> 7200776263</p>
+            <p><strong>Email ID:</strong> <a href="mailto:mukeshmukesh55365@gmail.com">mukeshmukesh55365@gmail.com</a></p>
+
+            <p class="sub-heading">About Me</p>
+            <p>I am a passionate learner, interested in technology, sports, and personal growth. I love working on projects and constantly improving my skills.</p>
+        </div>
+
+        <p class="sub-heading">Education History</p>
+        <table>
+            <tr>
+                <th>Class</th>
+                <th>School Name</th>
+            </tr>
+            <tr><td>6th - 10th</td><td>Maharaja Agrasen Metric Higher Secondary School</td></tr>
+            <tr><td>11th - 12th</td><td>Government Higher Secondary School</td></tr>
+        </table>
+
+        <p class="sub-heading">Semester Performance</p>
+        <table>
+            <tr>
+                <th>Semester</th>
+                <th>Arrear</th>
+                <th>Cleared</th>
+            </tr>
+            <tr><td>1st</td><td>1</td><td>All Clear</td></tr>
+            <tr><td>2nd</td><td>3</td><td>All Clear</td></tr>
+        </table>
+
+        <button class="button" id="toggleButton">Show More</button>
+        <div id="extraDetails" class="hidden">
+            <p class="sub-heading">Sports</p>
+            <p><strong>Active in:</strong> Volleyball, Cricket</p>
+            <p><strong>Achievements:</strong> Participated in inter-college sports tournaments</p>
+
+            <p class="sub-heading">IT Industry Summary</p>
+            <p>I have a strong interest in programming and software development. I am currently exploring web development, coding, and other aspects of the IT industry to build a successful career.</p>
+
+            <p class="sub-heading">Skills Required for IT Industry</p>
+            <ul style="text-align: left; margin-left: 20px;">
+                <li><strong>Programming Languages:</strong> Python, Java, C++</li>
+                <li><strong>Web Development:</strong> HTML, CSS, JavaScript, React</li>
+                <li><strong>Database Management:</strong> MySQL, MongoDB</li>
+                <li><strong>Cloud Computing:</strong> AWS, Azure</li>
+                <li><strong>Software Development:</strong> Agile Methodology, Version Control (Git)</li>
+                <li><strong>Problem-Solving:</strong> Data Structures & Algorithms</li>
+                <li><strong>Cybersecurity:</strong> Ethical Hacking Basics</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById("toggleButton").addEventListener("click", function() {
+            var details = document.getElementById("extraDetails");
+            if (details.classList.contains("hidden")) {
+                details.classList.remove("hidden");
+                details.classList.add("visible");
+                this.textContent = "Show Less";
+            } else {
+                details.classList.add("hidden");
+                details.classList.remove("visible");
+                this.textContent = "Show More";
+            }
+        });
+    </script>
+
+</body>
+</html>
